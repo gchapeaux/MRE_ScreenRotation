@@ -12,9 +12,13 @@
             DeviceDisplay.Current.MainDisplayInfoChanged += Current_MainDisplayInfoChanged;
         }
 
+        int Count = 0;
+
         private void Current_MainDisplayInfoChanged(object? sender, DisplayInfoChangedEventArgs e)
         {
             Console.WriteLine("=*=*=*=*=*= MAIN DISPLAY INFO CHANGED =*=*=*=*=*=");
+            Count++;
+            EventCalledCounter.Text = "MainDisplayInfoChanged event called " + Count + " time(s).";
             RespModeLabel.Text = (e.DisplayInfo.Orientation == DisplayOrientation.Portrait) ? "I'm in Portrait mode" : "I'm in Landscape Mode";
         }
 
