@@ -5,18 +5,11 @@
              Shell.ForegroundColor="{StaticResource Primary}">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="10">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="100"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+        <VerticalStackLayout Spacing="5" Padding="10">
 
             <Label
                 x:Name="RespModeLabel"
-                Text="Hello, World!"
+                Text="Should display current orientation mode."
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
@@ -27,11 +20,21 @@
 
             <Button
                 x:Name="ModeBtn"
-                Text="Click me to query current orientation" 
-                SemanticProperties.Hint="Displays current orientation"
+                Text="Querry MainDisplayInfo.Orientation" 
                 Clicked="ModeBtn_Clicked"
                 HorizontalOptions="Fill" />
-            
+
+            <Label x:Name="MDIOLabel" Text="MainDisplayInfo.Orientation : " HorizontalOptions="Center" FontSize="Medium"/>
+
+            <Button
+                x:Name="SwitchModeBtn"
+                Text="Switch RequestedOrientation" 
+                Clicked="SwitchModeBtn_Clicked"
+                HorizontalOptions="Fill" />
+
+            <Label x:Name="ROLabel" Text="RequestedOrientation : " HorizontalOptions="Center" FontSize="Medium"/>
+
+
         </VerticalStackLayout>
     </ScrollView>
 
