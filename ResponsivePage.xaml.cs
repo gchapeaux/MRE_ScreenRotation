@@ -34,7 +34,7 @@
             
 #if ANDROID
             SOToRestore = Microsoft.Maui.ApplicationModel.Platform.CurrentActivity.RequestedOrientation;
-            Microsoft.Maui.ApplicationModel.Platform.CurrentActivity.RequestedOrientation = Android.Content.PM.ScreenOrientation.User;
+            Microsoft.Maui.ApplicationModel.Platform.CurrentActivity.RequestedOrientation = Android.Content.PM.ScreenOrientation.FullUser;
             UseUserRotation = true;
             ROLabel.Text = (UseUserRotation) ? "RequestedOrientation : User" : "RequestedOrientation : Portrait";
             Console.WriteLine(DeviceDisplay.Current.MainDisplayInfo.Orientation.ToString());
@@ -58,9 +58,9 @@
         private void SwitchModeBtn_Clicked(object sender, EventArgs e)
         {
 #if ANDROID
-            Microsoft.Maui.ApplicationModel.Platform.CurrentActivity.RequestedOrientation = (UseUserRotation) ? Android.Content.PM.ScreenOrientation.Portrait : Android.Content.PM.ScreenOrientation.User;
+            Microsoft.Maui.ApplicationModel.Platform.CurrentActivity.RequestedOrientation = (UseUserRotation) ? Android.Content.PM.ScreenOrientation.Portrait : Android.Content.PM.ScreenOrientation.FullUser;
             UseUserRotation = !UseUserRotation;
-            ROLabel.Text = (UseUserRotation) ? "Current RequestedOrientation : User" : "Current RequestedOrientation : Portrait";
+            ROLabel.Text = (UseUserRotation) ? "Current RequestedOrientation : FullUser" : "Current RequestedOrientation : Portrait";
 #endif
         }
     }
